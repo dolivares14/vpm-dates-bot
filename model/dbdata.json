@@ -1,0 +1,26 @@
+
+[{
+   
+    "userdata":{"email":"aurerojas@sharklasers.com","pass":"esz.MHCft55-"},
+      "cities":[{"city":"Austin","open":false},
+      {"city":"Dallas","open":false},
+      {"city":"el paso","open":false},
+      {"city":"mcallen","open":false},
+        {"city":"laredo","open":false},
+    {"city":"Austin","open":false}]
+},
+{
+  
+  "userdata":{"email":"danher@sharklasers.com","pass":"esz.MHCft55-"},
+    "cities":[{"city":"Los angeles","open":false},
+    {"city":"San francisco","open":false},
+    {"city":"Santa Ana","open":false},
+    {"city":"San jose","open":false},
+      {"city":"Oxnard","open":false},
+  {"city":"San bernandino","open":false},
+  {"city":"Riverside","open":false},
+  {"city":"San Diego","open":false},
+  {"city":"Sacramento","open":false},
+  {"city":"Santa rosa","open":false}
+]
+}]

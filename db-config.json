@@ -1,0 +1,9 @@
+{
+    "mongodb": {
+      "url": "mongodb://localhost:27017/chatsIA",
+      "options": {
+        "useNewUrlParser": true,
+        "useUnifiedTopology": true
+      }
+    }
+  }
