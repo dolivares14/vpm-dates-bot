@@ -8,7 +8,8 @@ const {checkDisponibility} = require('./disponibility.js')
 async function runBot(state) {
   // Configuración del navegador
   
-
+ // const chromeOptions = new chrome.Options();
+  //chromeOptions.addArguments('--headless');
   
   
   const driver = await new Builder().forBrowser('chrome').build();
@@ -23,7 +24,7 @@ async function runBot(state) {
     
 
 
-    while (intentos < 3) {
+    while (intentos < 6) {
       
 
 

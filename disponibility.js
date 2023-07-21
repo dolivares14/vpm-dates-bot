@@ -27,19 +27,29 @@ async function checkDisponibility(driver, ciudades) {
           const container = await driver.findElement(By.css('form > .col-sm-12 > div > div:nth-child(3)'));
           const childElements = await container.findElements(By.css('div.card-body'));
           return childElements.length > 0;
-        }, 100000);
+        }, 150000);
 
+        if (isModalBody3Visible) {
+          await driver.wait(until.elementLocated(By.css('div.modal-body > div > a > span > svg')), 20000);
+          await driver.findElement(By.css('div.modal-body > div > a > span > svg')).click();
+        }
 
-        const container = await driver.findElement(By.css('form > .col-sm-12 > div > div:nth-child(3)'));
-        const childElements = await container.findElements(By.css('div.card-body > p:nth-child(1) > span'));
+        await driver.findElement(By.css('#vs3__combobox')).click()
+
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+        const container = await driver.findElement(By.css('#vs3__listbox'));
+        const childElements = await container.findElements(By.css('li'));
     
-        for (const date of childElements) {
-        const divText = await date.getText();
+        for  (const ciudad of ciudades){
         
-        for (const ciudad of ciudades) {
+        
+        for (const date of childElements)  {
+          const divText = await date.getText();
+          
             if (divText.includes(ciudad.city.toUpperCase())) {
                 await sendToTm(`ATENCION\n============================================\n\nHay citas disponibles en ${ciudad.city.toUpperCase()}\n\n============================================`)
                 console.log(`Hay citas disponibles en ${ciudad.city.toUpperCase()}`);
+                break;
             }
         }
         }

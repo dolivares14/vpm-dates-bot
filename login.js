@@ -3,7 +3,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 
 async function login(driver,userdata) {
     try{
-        await driver.wait(until.elementLocated(By.name('email')), 30000);
+        await driver.wait(until.elementLocated(By.name('email')), 70000);
 
         const elementos = await driver.findElements(By.css('div.modal-body'));
         if (elementos.length > 0) {
@@ -13,7 +13,7 @@ async function login(driver,userdata) {
         } 
         
 
-        await driver.wait(until.elementLocated(By.css('div.checkbox > label > input')), 20000);
+        await driver.wait(until.elementLocated(By.css('div.checkbox > label > input')), 50000);
 
         // Rellenar los campos de inicio de sesión
         await driver.findElement(By.name('email')).sendKeys(userdata.email);
@@ -37,7 +37,7 @@ async function login(driver,userdata) {
         await driver.wait(async function () {
         const url = await driver.getCurrentUrl();
             return url === 'https://citas.sre.gob.mx/inbox';
-        }, 10000);
+        }, 20000);
 
 
         return true
